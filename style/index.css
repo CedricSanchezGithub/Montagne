@@ -172,7 +172,7 @@ main .btn {
   transition: 0.2s;
 }
 main .btn:hover {
-  background: rgba(0, 101, 22, 0.258);
+  background: rgb(200, 200, 200);
 }
 main img {
   width: 100%;
@@ -191,7 +191,7 @@ main .global-section span:before, main .global-section span:after {
   position: absolute;
   width: 37%;
   height: 1px;
-  background: rgb(209, 209, 209);
+  background: rgb(200, 200, 200);
   top: 50%;
 }
 @media screen and (max-with: 700px) {
@@ -230,10 +230,10 @@ main .global-section .btn {
 main .section2 {
   display: grid;
   grid-template-columns: 50% 50%;
-  border-top: 1px solid rgb(209, 209, 209);
+  border-top: 1px solid rgb(200, 200, 200);
 }
 main .section2 .left-section {
-  border-right: 1px solid rgb(209, 209, 209);
+  border-right: 1px solid rgb(200, 200, 200);
 }
 main .section2 .left-section,
 main .section2 .right-section {
@@ -242,7 +242,7 @@ main .section2 .right-section {
 }
 main .section2 .btn {
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -260,17 +260,18 @@ main .section2 h3 {
 main .section2 p {
   text-align: left;
   line-height: 30px;
-  margin: 30px 0;
+  margin: 30px 0 100px;
   font-size: 0.8rem;
 }
 
 footer {
+  font-family: "font2", sans-serif, sans-serif;
   color: rgb(105, 105, 105);
 }
 footer .form {
   display: grid;
   grid-template-columns: 50% 50%;
-  background: rgb(209, 209, 209);
+  background: rgb(233, 233, 233);
   width: 85%;
   margin: 40px auto 70px;
 }
@@ -278,9 +279,75 @@ footer form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  font-weight: bold;
+  font-family: "font1", sans-serif;
+  font-size: 0.8rem;
+}
+footer form input,
+footer form textarea {
+  background: rgb(233, 233, 233);
+  resize: none;
+  border: 1px solid rgb(200, 200, 200);
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+}
+footer form input:hover,
+footer form textarea:hover {
+  border: solid 1px rgb(105, 105, 105);
+  background: rgb(233, 233, 233);
+}
+footer form textarea {
+  height: 200px;
+}
+footer form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 50px;
+}
+footer form button {
+  color: rgb(17, 17, 17);
+  border: solid 2px rgb(17, 17, 17);
+  padding: 20px 80px;
+  font-family: "font1", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s;
+}
+footer form button:hover {
+  background: rgb(200, 200, 200);
 }
 footer .footer-right {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
-  border: 1px solid rgb(105, 105, 105);
+}
+footer .footer-right .adress {
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid rgb(200, 200, 200);
+  height: 150px;
+  display: grid;
+}
+footer .footer-right .adress h5 {
+  font-family: "font1", sans-serif;
+}
+footer .footer-right .adress p {
+  width: 50%;
+  color: rgb(200, 200, 200);
+}
+footer .footer-right .adress ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  transform: scale(1.5);
+}
+footer .footer-right .adress ul i {
+  color: #a1a1a1;
+}
+footer .footer-right .adress ul i:hover {
+  transform: scale(1.4);
 }/*# sourceMappingURL=index.css.map */

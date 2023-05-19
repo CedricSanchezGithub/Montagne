@@ -1,11 +1,13 @@
 @use "variables" as var;
 
 footer {
+  font-family: var.$font2, sans-serif;
   color: var.$grey3;
+
   .form {
     display: grid;
     grid-template-columns: 50% 50%;
-    background: var.$grey1;
+    background: var.$grey2;
     width: 85%;
     margin: 40px auto 70px;
   }
@@ -13,10 +15,77 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-weight: bold;
+    font-family: var.$font1;
+    font-size: 0.8rem;
+    input,
+    textarea {
+      background: var.$grey2;
+      resize: none;
+      border: 1px solid var.$grey1;
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+
+      &:hover {
+        border: solid 1px var.$grey3;
+        background: var.$grey2;
+      }
+    }
+    textarea {
+      height: 200px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 50px;
+    }
+    button {
+      color: var.$black1;
+      border: solid 2px var.$black1;
+      padding: 20px 80px;
+      @include var.title;
+      transition: 0.2s;
+      &:hover {
+        background: var.$grey1;
+      }
+    }
   }
   .footer-right {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    border: 1px solid var.$grey3;
+
+    .adress {
+      grid-template-columns: 20% 80%;
+      align-items: center;
+      justify-items: center;
+      border: 1px solid var.$grey1;
+      height: 150px;
+      display: grid;
+      h5 {
+        font-family: var.$font1;
+      }
+
+      p {
+        width: 50%;
+        color: var.$grey1;
+      }
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        width: 60%;
+        transform: scale(1.5);
+        i {
+          color: #a1a1a1;
+
+          &:hover {
+            transform: scale(1.4);
+          }
+        }
+      }
+    }
   }
 }
