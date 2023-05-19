@@ -1,89 +1,112 @@
 @use "settings" as set;
+@use "variables" as var;
 
 header {
-    position: relative;
-    margin: 0 auto;
-    height: 90vh;
-    background: url(../assets/img/bg.jpg) fixed center/cover;
-    color: rgb(240, 240, 240);
-}
-header h1 {
-    font-family: set.$font1;
-    text-transform: uppercase;
-    padding: 280px 0 80px 0;
-    font-size: 4rem;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    letter-spacing: 4px;
-}
-header p {
-    text-align: center;
-    font-style: italic;
-    font-family: set.$font2;
+  color: var.$white1;
+  position: relative;
+  min-height: 100vh;
 
-}
-.defilement img {
-    position: absolute;
-    width: 50px;
-    opacity: 0.9;
-    top: 75%;
-    left: 50%;
-    border: solid 2px rgb(0, 0, 0);
-    border-radius: 100px;
-    filter: invert(100%);
-}
-
-nav {
-    position: absolute;
-width: 100%;
-    bottom: 0;
-}
-nav .reseau img {
-    width: 20px;
-}
-.pagesreseau {
-    display: grid;
-    grid-template-columns: 40% 60%;
-}
-nav .pages ul{
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: set.$font1;    
-    font-size: 0.8rem;
-    padding: 20px 10px;
-    margin-left: 60px;
-}
-
-.pages ul li:not(.massive) {
-    display: inline-block;
-
-    background-color: rgba(245, 245, 220, 0.178);
-
-}
-.pages ul li .massive {
-    background-color: rgb(200, 200, 200); // une couleur différente pour distinguer
-}
-
-
-.pages ul li:nth-child(2) a,
-.pages ul li:nth-child(3) a {
-    color: rgb(240,240,240);
-}
-nav .reseau {
-    text-align: center;
-    background-color: rgba(245, 245, 220, 0.178);
-    margin-right: 60px;
-
-}
-nav .reseau ul{
+  .header-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: headerAnim 1.5s forwards;
+
+    @keyframes headerAnim {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    h1 {
+      @include var.title;
+      font-size: 4rem;
+      letter-spacing: 6px;
+    }
+    p {
+      margin: 40px auto 60px;
+      font-style: italic;
+      width: 85%;
+    }
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid var.$white1;
+      border-radius: 50px;
+      height: 60px;
+      width: 60px;
+      font-size: 1.2rem;
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.25);
+      width: 85%;
+      height: 65px;
+      z-index: 100;
+      bottom: 0;
+      .pages {
+        justify-content: center;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pages {
+        &:hover li:not(:hover) {
+          background: none;
+          color: var.$white1;
+        }
+        height: 100%;
+        li {
+          height: 100%;
+          @include var.title;
+          font-size: 0.7rem;
+          padding: 0 15px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:first-child {
+            background: var.$white1;
+            color: var.$black1;
+          }
+          &:hover {
+            background: var.$white1;
+            color: var.$black1;
+          }
+        }
+      }
+      .reseau {
+        font-size: 1.1rem;
+        min-width: 100px;
+        width: 25%;
+        max-width: 300px;
+        justify-content: space-around;
+        margin-right: 10px;
+        li {
+          transition: 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
   }
-
-
+}

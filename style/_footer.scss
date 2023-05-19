@@ -1,0 +1,22 @@
+@use "variables" as var;
+
+footer {
+  color: var.$grey3;
+  .form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: var.$grey1;
+    width: 85%;
+    margin: 40px auto 70px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .footer-right {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    border: 1px solid var.$grey3;
+  }
+}

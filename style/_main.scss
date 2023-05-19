@@ -1,0 +1,103 @@
+@use "variables" as var;
+@use "settings" as set;
+
+main {
+  width: 85%;
+  margin: 0 auto;
+  background: var.$white1;
+  .btn {
+    color: var.$black1;
+    border: solid 2px var.$black1;
+    padding: 20px 80px;
+    @include var.title;
+    transition: 0.2s;
+
+    &:hover {
+      background: rgba(0, 101, 22, 0.258);
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .global-section {
+    width: 80%;
+    margin: 0 auto;
+
+    span {
+      padding: 70px 0;
+      position: relative;
+      display: block;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 37%;
+        height: 1px;
+        background: var.$grey1;
+        top: 50%;
+
+        @media screen and (max-with: 700px) {
+          width: 30%;
+        }
+        @media screen and (max-with: 400px) {
+          width: 24%;
+        }
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
+      }
+    }
+    h2 {
+      @include var.title;
+      font-size: 3rem;
+    }
+    p {
+      width: 60%;
+      margin: 30px auto;
+      line-height: 35px;
+      font-style: italic;
+      font-size: 0.8rem;
+    }
+    .btn {
+      margin: 50px 0 90px;
+    }
+  }
+  .section2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-top: 1px solid var.$grey1;
+
+    .left-section {
+      border-right: 1px solid var.$grey1;
+    }
+    .left-section,
+    .right-section {
+      padding: 60px;
+      position: relative;
+    }
+    .btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    span {
+      font-style: 0.75rem;
+    }
+    h3 {
+      margin: 20px 0;
+      @include var.title;
+      line-height: 28px;
+    }
+    p {
+      text-align: left;
+      line-height: 30px;
+      margin: 30px 0;
+      font-size: 0.8rem;
+    }
+  }
+}
