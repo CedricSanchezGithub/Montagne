@@ -232,6 +232,16 @@ main .section2 {
   grid-template-columns: 50% 50%;
   border-top: 1px solid rgb(200, 200, 200);
 }
+@media screen and (max-width: 950px) {
+  main .section2 {
+    display: block;
+  }
+}
+@media screen and (max-width: 950px) {
+  main .section2 div {
+    border-bottom: 1px solid rgb(200, 200, 200);
+  }
+}
 main .section2 .left-section {
   border-right: 1px solid rgb(200, 200, 200);
 }
@@ -275,6 +285,11 @@ footer .form {
   width: 85%;
   margin: 40px auto 70px;
 }
+@media screen and (max-width: 950px) {
+  footer .form {
+    display: block;
+  }
+}
 footer form {
   display: flex;
   flex-direction: column;
@@ -282,6 +297,12 @@ footer form {
   font-weight: bold;
   font-family: "font1", sans-serif;
   font-size: 0.8rem;
+}
+@media screen and (max-width: 950px) {
+  footer form {
+    align-items: stretch;
+    padding: 50px;
+  }
 }
 footer form input,
 footer form textarea {
@@ -320,9 +341,20 @@ footer form button {
 footer form button:hover {
   background: rgb(200, 200, 200);
 }
+@media screen and (max-width: 950px) {
+  footer form button {
+    margin-top: 50px;
+  }
+}
 footer .footer-right {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+}
+@media screen and (max-width: 950px) {
+  footer .footer-right {
+    align-items: stretch;
+    padding: 50px;
+  }
 }
 footer .footer-right .adress {
   grid-template-columns: 20% 80%;

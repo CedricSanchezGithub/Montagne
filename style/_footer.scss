@@ -10,6 +10,9 @@ footer {
     background: var.$grey2;
     width: 85%;
     margin: 40px auto 70px;
+    @media screen and (max-width: 950px) {
+      display: block;
+    }
   }
   form {
     display: flex;
@@ -18,6 +21,12 @@ footer {
     font-weight: bold;
     font-family: var.$font1;
     font-size: 0.8rem;
+    @media screen and (max-width: 950px) {
+      align-items: stretch;
+
+      padding: 50px;
+    }
+
     input,
     textarea {
       background: var.$grey2;
@@ -52,12 +61,18 @@ footer {
       &:hover {
         background: var.$grey1;
       }
+      @media screen and (max-width: 950px) {
+        margin-top: 50px;
+      }
     }
   }
   .footer-right {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-
+    @media screen and (max-width: 950px) {
+      align-items: stretch;
+      padding: 50px;
+    }
     .adress {
       grid-template-columns: 20% 80%;
       align-items: center;
